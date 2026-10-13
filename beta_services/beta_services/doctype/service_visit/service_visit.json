@@ -1,0 +1,158 @@
+{
+ "actions": [],
+ "autoname": "SV-.YYYY.-.#####",
+ "creation": "2026-10-13 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "contract",
+  "customer",
+  "status",
+  "column_break_main",
+  "visit_date",
+  "technician",
+  "section_work",
+  "hours",
+  "rate_per_hour",
+  "charge",
+  "notes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "contract",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Contract",
+   "options": "Service Contract",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "contract.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "default": "Planned",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Planned\nCompleted",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_main",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "visit_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Visit Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "technician",
+   "fieldtype": "Data",
+   "label": "Technician"
+  },
+  {
+   "fieldname": "section_work",
+   "fieldtype": "Section Break",
+   "label": "Work"
+  },
+  {
+   "description": "Hours on site, for example 1.5 for an hour and a half.",
+   "fieldname": "hours",
+   "fieldtype": "Float",
+   "label": "Hours"
+  },
+  {
+   "fetch_from": "contract.rate_per_hour",
+   "fieldname": "rate_per_hour",
+   "fieldtype": "Currency",
+   "label": "Rate per Hour",
+   "read_only": 1
+  },
+  {
+   "fieldname": "charge",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Charge",
+   "read_only": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Service Visit",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-10-13 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Beta Services",
+ "name": "Service Visit",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Maintenance Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Maintenance User",
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "visit_date",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "customer",
+ "track_changes": 1
+}
